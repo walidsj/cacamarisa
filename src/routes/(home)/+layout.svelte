@@ -42,7 +42,7 @@
         <slot />
     </main>
     <footer
-        class="fixed bottom-0 shadow-md w-full px-5 pt-2 pb-3 border-t-slate-100 border-t bg-white drop-shadow-[0_-8px_40px_#82637b1a]"
+        class="fixed bottom-0 shadow-md w-full px-5 pt-2 pb-5 border-t-slate-100 border-t bg-white drop-shadow-[0_-8px_40px_#82637b1a]"
     >
         <div class="flex justify-around">
             <a href="/" class="flex flex-col items-center justify-center">
