@@ -3,10 +3,8 @@
     import { page } from '$app/stores'
 </script>
 
-<div class="flex flex-col w-full h-screen select-none">
-    <div
-        class="flex-1 pb-10 w-full overflow-x-hidden overflow-y-auto text-gray-700"
-    >
+<div class="flex flex-col w-full h-[calc(var(--vh,1vh)*100)] select-none">
+    <div class="flex-1 pb-10 overflow-x-hidden overflow-y-auto">
         <header class="flex flex-row justify-between py-1 pt-5 px-5">
             <a href="/" class="flex flex-row gap-2 items-center">
                 <img src={logo} alt="Logo" class="h-12 w-auto" />
@@ -47,7 +45,7 @@
         </main>
     </div>
     <footer
-        class="relative w-full px-5 pt-2 pb-4 border-t-slate-100 border-t bg-white shadow-[0_-8px_40px_#82637b1a]"
+        class="relative w-full px-5 pt-2 pb-4 shadow-[0_-8px_40px_#82637b1a]"
     >
         <div class="flex justify-around">
             <a href="/" class="flex flex-col items-center justify-center">
