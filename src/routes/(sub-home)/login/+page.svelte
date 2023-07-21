@@ -2,7 +2,7 @@
     import logo from '$lib/assets/images/logo-caca.png'
 </script>
 
-<main class="flex min-h-[calc(100vh-100px)]">
+<main class="flex min-h-screen">
     <div
         class="flex flex-col items-center justify-center flex-1 min-w-full px-5 space-y-6"
     >

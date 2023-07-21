@@ -5,11 +5,18 @@ export default {
         fontFamily: {
             sans: ['"Poppins", sans-serif'],
         },
+        height: ({ theme }) => ({
+            screen: 'calc(var(--vh, 1vh) * 100)',
+            ...theme('spacing'),
+        }),
+        minHeight: ({ theme }) => ({
+            screen: 'calc(var(--vh, 1vh) * 100)',
+            ...theme('spacing'),
+        }),
         extends: {},
     },
     plugins: [
         require('@tailwindcss/forms'),
         require('@tailwindcss/aspect-ratio'),
-        require('tailwindcss-safe-area')
     ],
 }

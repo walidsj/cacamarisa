@@ -3,7 +3,7 @@
     import { page } from '$app/stores'
 </script>
 
-<div class="flex flex-col w-full h-[calc(var(--vh,1vh)*100)] select-none">
+<div class="flex flex-col w-full h-screen select-none">
     <div class="flex-1 pb-10 overflow-x-hidden overflow-y-auto">
         <header class="flex flex-row justify-between py-1 pt-5 px-5">
             <a href="/" class="flex flex-row gap-2 items-center">
