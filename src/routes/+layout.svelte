@@ -1,8 +1,8 @@
 <script>
-    import '@fontsource/inter'
-    import './app.css'
+    import '@fontsource/poppins/400.css'
+    import '@fontsource/poppins/600.css'
+    import '@fontsource/poppins/800.css'
+    import '$lib/assets/css/app.css'
 </script>
 
-<main class="bg-slate-100 min-h-screen">
-    <slot />
-</main>
+<slot />
