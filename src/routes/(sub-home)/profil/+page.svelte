@@ -33,7 +33,7 @@
                     src="https://ui-avatars.com/api/?name=Jiilaan+Aanisah&amp;color=7F9CF5&amp;background=EBF4FF"
                 />
                 <div class="flex flex-col w-full text-left">
-                    <p class="text-xl font-medium">Jiilaan Aanisah</p>
+                    <p class="text-xl font-medium">Jiilaan R. Aanisah</p>
                     <p class="text-gray-500 text-sm">KPPN Marisa</p>
                 </div>
             </div>
