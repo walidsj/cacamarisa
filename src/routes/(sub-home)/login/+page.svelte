@@ -28,7 +28,7 @@
             <div class="w-7">​</div>
         </div>
     </div>
-    <main class="flex min-h-[calc(100vh-84px)]">
+    <main class="flex min-h-[calc(100vh-100px)]">
         <div
             class="flex flex-col items-center justify-center flex-1 min-w-full px-5 space-y-6"
         >
