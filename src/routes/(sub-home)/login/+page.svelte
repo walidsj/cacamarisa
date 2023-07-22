@@ -9,7 +9,7 @@
         <a href="/" class="flex flex-row gap-2 items-center">
             <img src={logo} alt="Logo" class="h-12 w-auto" />
             <div class="flex flex-col">
-                <h1 class="text-2xl font-semibold leading-5">cacamarisa</h1>
+                <h1 class="text-2xl font-semibold leading-5">Marisa</h1>
                 <span class="text-gray-400 text-sm">mobile</span>
             </div>
         </a>

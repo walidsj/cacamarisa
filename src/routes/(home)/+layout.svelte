@@ -9,7 +9,7 @@
             <a href="/" class="flex flex-row gap-2 items-center">
                 <img src={logo} alt="Logo" class="h-12 w-auto" />
                 <div class="flex flex-col">
-                    <h1 class="text-2xl font-semibold leading-5">marisa</h1>
+                    <h1 class="text-2xl font-semibold leading-5">Marisa</h1>
                     <span class="text-gray-400 text-sm">mobile</span>
                 </div>
             </a>
@@ -51,7 +51,7 @@
             <a href="/" class="flex flex-col items-center justify-center">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-8 h-8 text-blue-400"
+                    class="w-8 h-8 text-blue-500"
                     viewBox="0 0 512 512"
                 >
                     <path
@@ -78,7 +78,7 @@
                 <p
                     class="text-xs my-1 font-semibold text-center {$page.url
                         .pathname == '/'
-                        ? 'text-blue-400'
+                        ? 'text-blue-500'
                         : 'text-gray-400'}"
                 >
                     Beranda
@@ -119,7 +119,7 @@
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    class="w-8 h-8 text-blue-400"
+                    class="w-8 h-8 text-blue-500"
                     viewBox="0 0 512 512"
                 >
                     <rect
@@ -151,7 +151,7 @@
                 <p
                     class="text-xs my-1 font-semibold text-center {$page.url
                         .pathname == '/buletin'
-                        ? 'text-blue-400'
+                        ? 'text-blue-500'
                         : 'text-gray-400'}"
                 >
                     Buletin

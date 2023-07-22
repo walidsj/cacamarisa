@@ -8,8 +8,16 @@
 </svelte:head>
 
 <div class="px-5 mt-1 py-5">
+    <div class="w-full pb-5">
+        <input
+            id="phone"
+            placeholder="Cari Buletin..."
+            class="border border-gray-200 shadow-sm w-full mt-1 rounded-2xl p-3"
+            type="tel"
+        />
+    </div>
     <div class="flex justify-between pb-2">
-        <div class="font-semibold">Publikasi Terbaru</div>
+        <div class="font-semibold">Rilis Terbaru</div>
     </div>
     <div class="grid grid-cols-2 gap-5">
         <div class="flex flex-col bg-white shadow-md rounded-3xl">

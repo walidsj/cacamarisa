@@ -12,7 +12,7 @@
         <div class="p-2">
             <button
                 type="button"
-                class="transition-all ease-in-out bg-gradient-to-br from-blue-300 to-blue-500 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
+                class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -53,7 +53,7 @@
         <div class="p-2">
             <button
                 type="button"
-                class="transition-all ease-in-out bg-gradient-to-br from-blue-300 to-blue-500 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
+                class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -136,7 +136,7 @@
         <div class="p-2">
             <button
                 type="button"
-                class="transition-all ease-in-out bg-gradient-to-br from-blue-300 to-blue-500 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
+                class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -158,7 +158,7 @@
         <div class="p-2">
             <button
                 type="button"
-                class="transition-all ease-in-out bg-gradient-to-br from-blue-300 to-blue-500 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
+                class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
                 <svg
                     xmlns="http://www.w3.org/2000/svg"

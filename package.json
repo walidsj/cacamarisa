@@ -24,6 +24,7 @@
         "@fontsource/dm-sans": "^5.0.5",
         "@fontsource/inter": "^5.0.5",
         "@fontsource/plus-jakarta-sans": "^5.0.5",
-        "@fontsource/poppins": "^5.0.5"
+        "@fontsource/poppins": "^5.0.5",
+        "swiper": "^10.0.4"
     }
 }
