@@ -13,7 +13,7 @@
             id="phone"
             placeholder="Cari Buletin..."
             class="border border-gray-200 shadow-sm w-full mt-1 rounded-2xl p-3"
-            type="tel"
+            type="text"
         />
     </div>
     <div class="flex justify-between pb-2">
