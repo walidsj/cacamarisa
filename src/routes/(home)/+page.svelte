@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Caca Marisa Mobile</title>
+    <title>Marisa Mobile</title>
 </svelte:head>
 
 <div class="pl-5 mt-1">
@@ -197,7 +197,7 @@
     <div class="flex justify-between px-5 pb-2">
         <div class="font-semibold">Informasi Terkini</div>
         <div class="text-sm font-medium text-blue-500 active:opacity-80">
-            Semua
+            Lihat Semua
         </div>
     </div>
     <div class="flex-1 px-5 pt-1">

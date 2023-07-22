@@ -114,7 +114,7 @@
             </div>
 
             <a
-                href="/buletin"
+                href="/publikasi"
                 class="flex flex-col items-center justify-center"
             >
                 <svg
@@ -129,17 +129,17 @@
                         height="416"
                         rx="48"
                         ry="48"
-                        fill={$page.url.pathname == '/buletin'
+                        fill={$page.url.pathname == '/publikasi'
                             ? 'currentColor'
                             : 'none'}
                         stroke="currentColor"
                         stroke-linejoin="round"
                         stroke-width="32"
                     /><path
-                        fill={$page.url.pathname == '/buletin'
+                        fill={$page.url.pathname == '/publikasi'
                             ? 'currentColor'
                             : 'none'}
-                        stroke={$page.url.pathname == '/buletin'
+                        stroke={$page.url.pathname == '/publikasi'
                             ? 'white'
                             : 'currentColor'}
                         stroke-linecap="round"
@@ -150,11 +150,11 @@
                 </svg>
                 <p
                     class="text-xs my-1 font-semibold text-center {$page.url
-                        .pathname == '/buletin'
+                        .pathname == '/publikasi'
                         ? 'text-blue-500'
                         : 'text-gray-400'}"
                 >
-                    Buletin
+                    Publikasi
                 </p>
             </a>
         </div>

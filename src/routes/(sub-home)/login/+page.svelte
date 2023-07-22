@@ -22,7 +22,7 @@
                     <input
                         id="phone"
                         placeholder="0881-2345-6789"
-                        class="border border-gray-200 shadow-sm w-full mt-1 rounded-2xl p-3"
+                        class="border border-gray-200 shadow-sm w-full mt-1 rounded-2xl p-3 placeholder:text-gray-400"
                         type="tel"
                     />
                 </div>

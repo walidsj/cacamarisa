@@ -48,6 +48,55 @@
                     >
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            class="w-5"
+                        >
+                            <path
+                                d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="32"
+                            /><circle
+                                cx="256"
+                                cy="256"
+                                r="80"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-miterlimit="10"
+                                stroke-width="32"
+                            />
+                        </svg>
+                        <div
+                            class="flex-1 min-w-0 text-base text-left text-gray-700 group-active:text-gray-900"
+                        >
+                            Admin Area
+                        </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            aria-hidden="true"
+                            class="w-5"
+                        >
+                            <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M8.25 4.5l7.5 7.5-7.5 7.5"
+                            />
+                        </svg>
+                    </button>
+                </li>
+                <li>
+                    <button
+                        type="button"
+                        class="flex items-center justify-between w-full px-5 py-4 space-x-4 group active:bg-gray-100"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
@@ -106,7 +155,7 @@
                         <div
                             class="flex-1 min-w-0 text-base text-left text-gray-700 group-active:text-gray-900"
                         >
-                            Tentang Caca Marisa Mobile
+                            Tentang Marisa Mobile
                         </div>
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
