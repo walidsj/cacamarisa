@@ -103,7 +103,8 @@
                             class="flex flex-col justify-center flex-1 min-w-0 pl-5 space-y-1"
                         >
                             <div class="text-sm line-clamp-3">
-                                Petunjuk Teknis Pengajuan TUP Sakti V.3
+                                Petunjuk Teknis Pengajuan TUP Tunai dan KKP
+                                Sakti
                             </div>
                             <div
                                 class="items-center w-full text-xs text-gray-400 line-clamp-1"
@@ -144,7 +145,8 @@
                             class="flex flex-col justify-center flex-1 min-w-0 pl-5 space-y-1"
                         >
                             <div class="text-sm line-clamp-3">
-                                Petunjuk Teknis Pengiriman SPM
+                                Petunjuk Teknis Khusus Satker Pemesanan dan
+                                Pengiriman Barang
                             </div>
                             <div
                                 class="items-center w-full text-xs text-gray-400 line-clamp-1"
