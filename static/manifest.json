@@ -1,6 +1,6 @@
 {
     "name": "Marisa Mobile",
-    "short_name": "Marisa",
+    "short_name": "Marisa Mobile",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
