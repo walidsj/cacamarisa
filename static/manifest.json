@@ -1,12 +1,12 @@
 {
-    "name": "Caca Marisa Mobile",
-    "short_name": "Caca Marisa",
+    "name": "Marisa Mobile",
+    "short_name": "Marisa",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
     "lang": "en",
     "scope": "/",
-    "description": "Aplikasi Mobile Caca Marisa Berbasis PWA",
+    "description": "Aplikasi Mobile KPPN Marisa Berbasis PWA",
     "theme_color": "#ffffff",
     "orientation": "portrait-primary",
     "icons": [

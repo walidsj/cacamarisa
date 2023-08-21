@@ -18,6 +18,8 @@
     })
 </script>
 
-<div class="text-gray-800">
-    <slot />
+<div class="w-full text-gray-800 bg-[url('/pattern.png')]">
+    <div class="max-w-md mx-auto bg-white shadow-xl">
+        <slot />
+    </div>
 </div>

@@ -1,10 +1,12 @@
 <script>
-    import logo from '$lib/assets/images/logo-caca.png'
+    import logo from '$lib/assets/images/logo.png'
     import { page } from '$app/stores'
 </script>
 
 <div class="flex flex-col w-full h-screen select-none">
-    <div class="flex-1 pb-10 overflow-x-hidden overflow-y-auto">
+    <div
+        class="flex-1 pb-10 overflow-x-hidden overflow-y-auto scrollbar-thin scrollbar-track-gray-50 scrollbar-thumb-gray-200 hover:scrollbar-thumb-gray-300"
+    >
         <header class="flex flex-row justify-between py-1 pt-5 px-5">
             <a href="/" class="flex flex-row gap-2 items-center">
                 <img src={logo} alt="Logo" class="h-12 w-auto" />
@@ -15,7 +17,7 @@
             </a>
             <div class="inline-flex">
                 <a
-                    href="/profil"
+                    href="/app/profil"
                     class="flex items-center justify-center bg-gray-100 rounded-2xl active:bg-gray-200 w-12 h-12"
                 >
                     <svg

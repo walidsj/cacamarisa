@@ -1,5 +1,5 @@
 <script>
-    import kppnLogo from '$lib/assets/images/logo.png'
+    import kppnLogo from '$lib/assets/images/logo-intress.png'
     import kemenkeuLogo from '$lib/assets/images/logo-kemenkeu2.png'
 </script>
 
