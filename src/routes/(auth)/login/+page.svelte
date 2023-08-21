@@ -1,5 +1,5 @@
 <script>
-    import logo from '$lib/assets/images/logo-caca.png'
+    import logo from '$lib/assets/images/logo.png'
 </script>
 
 <main class="flex min-h-screen">
