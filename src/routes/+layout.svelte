@@ -6,6 +6,7 @@
     import '@fontsource/poppins/800.css'
     import '$lib/assets/css/app.css'
     import { onMount } from 'svelte'
+    import { Toaster } from 'svelte-french-toast'
 
     function updateInnerHeight() {
         let vh = window.innerHeight * 0.01
@@ -18,6 +19,7 @@
     })
 </script>
 
+<Toaster />
 <div class="w-full text-gray-800 bg-[url('/pattern.png')]">
     <div class="max-w-md mx-auto bg-white shadow-xl">
         <slot />

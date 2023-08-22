@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-    <title>Buletin - Marisa Mobile</title>
+    <title>Publikasi</title>
 </svelte:head>
 
 <div class="mt-1 py-5">
