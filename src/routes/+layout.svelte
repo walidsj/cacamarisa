@@ -21,12 +21,13 @@
     })
 </script>
 
-<Toaster />
 <div class="w-full text-gray-800 bg-[url('/pattern.png')]">
     <div class="max-w-md mx-auto bg-white shadow-xl">
         {#if $navigating}
             <PreloadingIndicator />
         {/if}
+
+        <Toaster />
 
         <slot />
     </div>
