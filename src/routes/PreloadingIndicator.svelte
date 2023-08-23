@@ -27,10 +27,13 @@
     .progress-container {
         position: absolute;
         top: 0;
-        left: 0;
+        left: 50%;
         width: 100%;
+        max-width: 28rem;
+        transform: translateX(-50%);
         height: 4px;
-        z-index: 999;
+        z-index: 1999;
+        background-color: #f9fafb;
     }
 
     .progress {
