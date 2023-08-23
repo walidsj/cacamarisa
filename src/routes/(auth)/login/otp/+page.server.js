@@ -38,8 +38,6 @@ export const actions = {
         const otpInput = data.get('otp')
 
         if (Date.now() > expiredAt) {
-            cookies.delete('log_session', { path: '/' })
-
             return fail(422, {
                 message:
                     'Kode OTP telah kadaluarsa. Silakan masukkan kembali nomor WhatsApp dan kirim ulang kode OTP Anda',
