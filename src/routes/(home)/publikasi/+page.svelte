@@ -1,6 +1,7 @@
 <script>
     import cacaMarisa1 from '$lib/assets/images/buletin/cacamarisa1.png'
     import cacaMarisa2 from '$lib/assets/images/buletin/cacamarisa2.png'
+    import cacaMarisa3 from '$lib/assets/images/buletin/cacamarisa3.png'
 </script>
 
 <svelte:head>
@@ -34,6 +35,19 @@
                     <div class="h-auto w-40">
                         <img
                             class="w-full rounded-t-3xl"
+                            src={cacaMarisa3}
+                            alt="Buletin 3"
+                        />
+                    </div>
+                    <div class="p-3">
+                        <h1 class="font-semibold">Caca Marisa</h1>
+                        <p class="text-xs text-gray-500">Volume 3</p>
+                    </div>
+                </div>
+                <div class="m-2.5 flex flex-col bg-white shadow-md rounded-3xl">
+                    <div class="h-auto w-40">
+                        <img
+                            class="w-full rounded-t-3xl"
                             src={cacaMarisa2}
                             alt="Buletin 2"
                         />
@@ -41,19 +55,6 @@
                     <div class="p-3">
                         <h1 class="font-semibold">Caca Marisa</h1>
                         <p class="text-xs text-gray-500">Volume 2</p>
-                    </div>
-                </div>
-                <div class="m-2.5 flex flex-col bg-white shadow-md rounded-3xl">
-                    <div class="h-auto w-40">
-                        <img
-                            class="w-full rounded-t-3xl"
-                            src={cacaMarisa1}
-                            alt="Buletin 1"
-                        />
-                    </div>
-                    <div class="p-3">
-                        <h1 class="font-semibold">Caca Marisa</h1>
-                        <p class="text-xs text-gray-500">Volume 1</p>
                     </div>
                 </div>
                 <div class="m-2.5 flex flex-col bg-white shadow-md rounded-3xl">
