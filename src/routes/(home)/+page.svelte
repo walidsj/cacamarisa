@@ -1,13 +1,14 @@
 <script>
     import kppnLogo from '$lib/assets/images/logo-intress.png'
     import kemenkeuLogo from '$lib/assets/images/logo-kemenkeu2.png'
+    import { fly } from 'svelte/transition'
 </script>
 
 <svelte:head>
     <title>Marisa Mobile</title>
 </svelte:head>
 
-<div class="pl-5 mt-1">
+<div class="pl-5 mt-1" in:fly={{ y: 20 }}>
     <div class="flex justify-between w-full py-5 -m-2 overflow-auto">
         <div class="p-2">
             <button
@@ -188,12 +189,15 @@
     </div>
 </div>
 
-<div class="px-5 py-2 mb-5 space-x-5 flex items-center justify-center">
+<div
+    class="px-5 py-2 mb-5 space-x-5 flex items-center justify-center"
+    in:fly={{ y: 20 }}
+>
     <img src={kemenkeuLogo} alt="Logo Kemenkeu" class="h-8" />
     <img src={kppnLogo} alt="Logo KPPN Marisa" class="h-8" />
 </div>
 
-<div>
+<div in:fly={{ y: 20 }}>
     <div class="flex justify-between px-5 pb-2">
         <div class="font-semibold">Informasi Terkini</div>
         <div class="text-sm font-medium text-blue-500 active:opacity-80">

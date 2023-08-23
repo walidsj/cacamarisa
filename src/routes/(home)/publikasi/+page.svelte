@@ -2,13 +2,14 @@
     import cacaMarisa1 from '$lib/assets/images/buletin/cacamarisa1.png'
     import cacaMarisa2 from '$lib/assets/images/buletin/cacamarisa2.png'
     import cacaMarisa3 from '$lib/assets/images/buletin/cacamarisa3.png'
+    import { fly } from 'svelte/transition'
 </script>
 
 <svelte:head>
     <title>Publikasi</title>
 </svelte:head>
 
-<div class="mt-1 py-5">
+<div class="mt-1 py-5" in:fly={{ y: 20 }}>
     <div class="px-5">
         <div class="w-full pb-6">
             <input
