@@ -2,6 +2,7 @@
     import logo from '$lib/assets/images/logo.png'
     import { enhance } from '$app/forms'
     import toast from 'svelte-french-toast'
+    import { fly } from 'svelte/transition'
 </script>
 
 <svelte:head>
@@ -38,6 +39,7 @@
         <form
             method="post"
             action="?/sendOtp"
+            in:fly={{ y: 20 }}
             use:enhance={() => {
                 return async ({ result, update }) => {
                     await update()
