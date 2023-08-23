@@ -7,6 +7,8 @@
     import '$lib/assets/css/app.css'
     import { onMount } from 'svelte'
     import { Toaster } from 'svelte-french-toast'
+    import PreloadingIndicator from './PreloadingIndicator.svelte'
+    import { navigating } from '$app/stores'
 
     function updateInnerHeight() {
         let vh = window.innerHeight * 0.01
@@ -22,6 +24,10 @@
 <Toaster />
 <div class="w-full text-gray-800 bg-[url('/pattern.png')]">
     <div class="max-w-md mx-auto bg-white shadow-xl">
+        {#if $navigating}
+            <PreloadingIndicator />
+        {/if}
+
         <slot />
     </div>
 </div>
