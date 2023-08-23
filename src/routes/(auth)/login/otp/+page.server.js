@@ -4,6 +4,7 @@ import dayjs from 'dayjs'
 import { fail, redirect } from '@sveltejs/kit'
 import axios from 'axios'
 import { aes } from '$lib/server/utils/encryption'
+import generateOTP from '$lib/server/utils/generate-otp'
 import jwt from 'jsonwebtoken'
 
 /** @type {import('./$types').PageServerLoad} */
@@ -24,6 +25,46 @@ export const load = async ({ cookies }) => {
 
 /** @type {import('./$types').Actions} */
 export const actions = {
+    resendOtp: async ({ cookies }) => {
+        const logSession = cookies.get('log_session')
+
+        const { noHp } = aes.decrypt(logSession)
+
+        const otp = generateOTP(6)
+        const expiredAt = Date.now() + 2 * 60 * 1000
+
+        const message = `Permintaan OTP Marisa Mobile pada pukul *${dayjs().format(
+            'HH:mm'
+        )}*.
+
+Gunakan OTP *${otp}* untuk akun Marisa Mobile Anda. OTP akan kadaluarsa dalam waktu 2 menit (sampai pukul ${dayjs(
+            expiredAt
+        ).format('HH:mm')}). 
+        
+Perhatian! Jangan memberitahukan OTP ini kepada siapapun. Terima kasih. 🙏`
+
+        try {
+            await axios.post(
+                `${WABOT_API_URL}/send-message`,
+                { number: noHp, message: message },
+                { headers: { Authorization: `Bearer ${WABOT_API_KEY}` } }
+            )
+
+            const encrypted = aes.encrypt({ noHp, expiredAt, otp })
+
+            cookies.set('log_session', encrypted, { path: '/' })
+
+            return {
+                message: `Kode OTP telah dikirim kembali ke nomor ${noHp}, silahkan cek pesan masuk whatsapp Anda.`,
+                expiredAt,
+            }
+        } catch (err) {
+            return fail(422, {
+                message: err.response?.data?.message,
+                errors: err.response?.data?.errors,
+            })
+        }
+    },
     login: async ({ cookies, request }) => {
         const logSession = cookies.get('log_session')
 
@@ -40,7 +81,7 @@ export const actions = {
         if (Date.now() > expiredAt) {
             return fail(422, {
                 message:
-                    'Kode OTP telah kadaluarsa. Silakan masukkan kembali nomor WhatsApp dan kirim ulang kode OTP Anda',
+                    'Kode OTP telah kadaluarsa. Silakan kirim ulang kode OTP Anda',
             })
         }
 

@@ -4,14 +4,68 @@
     import toast from 'svelte-french-toast'
     import { fly } from 'svelte/transition'
 
+    export let data
+
     let formLogin
     let formCancel
+    let formResendOtp
+
+    let expiredAt = data.expiredAt
+
+    let remainingTime = expiredAt - Date.now()
+    let minutes = Math.floor(remainingTime / 60000)
+    let seconds = ((remainingTime % 60000) / 1000).toFixed(0)
+
+    $: time = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+        2,
+        '0'
+    )}`
+
+    $: resend = remainingTime <= 0 ? true : false
+    $: timer = setInterval(() => {
+        remainingTime = expiredAt - Date.now()
+        minutes = Math.floor(remainingTime / 60000)
+        seconds = ((remainingTime % 60000) / 1000).toFixed(0)
+        time = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
+            2,
+            '0'
+        )}`
+
+        if (remainingTime <= 0) {
+            clearInterval(timer)
+        }
+    }, 1000)
 </script>
 
 <svelte:head>
     <title>Masukkan Kode OTP</title>
 </svelte:head>
 
+<form
+    bind:this={formResendOtp}
+    method="POST"
+    action="?/resendOtp"
+    use:enhance={() => {
+        return async ({ result, update }) => {
+            switch (result.type) {
+                case 'failure':
+                    const message = result.data.message
+                    toast.error(
+                        message
+                            ? message.charAt(0).toUpperCase() + message.slice(1)
+                            : 'Terjadi kesalahan. Silahkan coba lagi.'
+                    )
+                    remainingTime = 0
+                    break
+                case 'success':
+                    await update()
+                    expiredAt = result.data.expiredAt
+                    toast.success(result.data.message)
+                    break
+            }
+        }
+    }}
+/>
 <div class="relative flex flex-col w-full min-h-screen">
     <div class="flex items-center justify-between py-1 space-x-2.5">
         <form
@@ -64,13 +118,13 @@
             in:fly={{ y: 20 }}
             use:enhance={() => {
                 return async ({ result, update }) => {
-                    await update()
                     switch (result.type) {
                         case 'redirect':
                             toast.success('Login berhasil!')
                             await applyAction(result)
                             break
                         case 'failure':
+                            await update()
                             toast.error(
                                 result.data.message ||
                                     'Terjadi kesalahan. Silakan coba lagi.'
@@ -108,6 +162,33 @@
                     </div>
                 </div>
             </div>
+
+            <button
+                disabled={!resend}
+                on:click={() => {
+                    formResendOtp.requestSubmit()
+                }}
+                type="button"
+                class="flex gap-2 items-center text-sm text-blue-500 px-2 py-1 rounded-xl font-semibold disabled:text-gray-500"
+            >
+                {#if resend}
+                    <svg
+                        stroke="currentColor"
+                        fill="none"
+                        stroke-width="2"
+                        viewBox="0 0 24 24"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        height="1em"
+                        width="1em"
+                    >
+                        <line x1="22" y1="2" x2="11" y2="13" />
+                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                    </svg>
+                {/if}
+                Kirim Ulang Kode
+                {#if !resend} ({time}) {/if}
+            </button>
             <button
                 type="button"
                 on:click={() => {
