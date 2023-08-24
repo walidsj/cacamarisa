@@ -3,6 +3,7 @@
     import { enhance, applyAction } from '$app/forms'
     import toast from 'svelte-french-toast'
     import { fly } from 'svelte/transition'
+    import Spinner from '../../../Spinner.svelte'
 
     export let data
 
@@ -35,6 +36,11 @@
             clearInterval(timer)
         }
     }, 1000)
+
+    let loadingResend = false
+    let loadingLogin = false
+    let loadingCancel = false
+    let otpInput
 </script>
 
 <svelte:head>
@@ -46,21 +52,24 @@
     method="POST"
     action="?/resendOtp"
     use:enhance={() => {
+        loadingResend = true
         return async ({ result, update }) => {
+            loadingResend = false
             switch (result.type) {
+                case 'success':
+                    await update()
+                    otpInput = null
+                    expiredAt = result.data.expiredAt
+                    toast.success(result.data.message)
+                    break
                 case 'failure':
+                    remainingTime = 0
                     const message = result.data.message
                     toast.error(
                         message
                             ? message.charAt(0).toUpperCase() + message.slice(1)
                             : 'Terjadi kesalahan. Silahkan coba lagi.'
                     )
-                    remainingTime = 0
-                    break
-                case 'success':
-                    await update()
-                    expiredAt = result.data.expiredAt
-                    toast.success(result.data.message)
                     break
             }
         }
@@ -73,13 +82,15 @@
             method="POST"
             action="?/cancel"
             use:enhance={() => {
-                return async ({ result, update }) => {
+                loadingCancel = true
+                return async ({ result }) => {
+                    loadingCancel = false
                     switch (result.type) {
-                        case 'failure':
-                            toast.error(result.data.message)
-                            break
                         case 'redirect':
                             await applyAction(result)
+                            break
+                        case 'failure':
+                            toast.error(result.data.message)
                             break
                     }
                 }
@@ -117,7 +128,9 @@
             action="?/login"
             in:fly={{ y: 20 }}
             use:enhance={() => {
+                loadingLogin = true
                 return async ({ result, update }) => {
+                    loadingLogin = false
                     switch (result.type) {
                         case 'redirect':
                             toast.success('Login berhasil!')
@@ -147,8 +160,12 @@
                     >Masukkan Kode OTP</label
                 >
                 <div class="mt-1">
-                    <div class="relative">
+                    <fieldset
+                        class="relative"
+                        disabled={loadingResend || loadingLogin}
+                    >
                         <input
+                            bind:value={otpInput}
                             on:input={({ target }) => {
                                 if (target.value.length === 6)
                                     formLogin.requestSubmit()
@@ -156,10 +173,10 @@
                             id="otp"
                             name="otp"
                             placeholder=" ------"
-                            class="border border-gray-200 shadow-sm text-center mt-1 rounded-2xl p-3 placeholder:text-gray-300 font-extrabold tracking-[20px] text-2xl w-72"
+                            class="border border-gray-200 shadow-sm text-center mt-1 rounded-2xl p-3 placeholder:text-gray-300 font-extrabold tracking-[20px] text-2xl w-72 disabled:opacity-70"
                             maxlength="6"
                         />
-                    </div>
+                    </fieldset>
                 </div>
             </div>
 
@@ -172,29 +189,34 @@
                 class="flex gap-2 items-center text-sm text-blue-500 px-2 py-1 rounded-xl font-semibold disabled:text-gray-500"
             >
                 {#if resend}
-                    <svg
-                        stroke="currentColor"
-                        fill="none"
-                        stroke-width="2"
-                        viewBox="0 0 24 24"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        height="1em"
-                        width="1em"
-                    >
-                        <line x1="22" y1="2" x2="11" y2="13" />
-                        <polygon points="22 2 15 22 11 13 2 9 22 2" />
-                    </svg>
+                    {#if loadingResend}
+                        <Spinner size={5} />
+                    {:else}
+                        <svg
+                            stroke="currentColor"
+                            fill="none"
+                            stroke-width="2"
+                            viewBox="0 0 24 24"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            height="1em"
+                            width="1em"
+                        >
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                    {/if}
                 {/if}
                 Kirim Ulang Kode
                 {#if !resend} ({time}) {/if}
             </button>
             <button
+                disabled={loadingCancel}
                 type="button"
                 on:click={() => {
                     formCancel.requestSubmit()
                 }}
-                class="text-sm font-medium text-red-700"
+                class="text-sm font-medium text-red-700 disabled:opacity-75 flex flex-row items-center gap-2"
             >
                 Batalkan
             </button>
