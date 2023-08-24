@@ -83,6 +83,7 @@
                                 placeholder="081234567890"
                                 class="border border-gray-200 shadow-sm w-full mt-1 rounded-2xl p-3 placeholder:text-gray-300 disabled:opacity-70"
                                 type="tel"
+                                required
                             />
                         </div>
                     </div>
