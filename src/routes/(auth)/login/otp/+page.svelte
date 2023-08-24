@@ -4,6 +4,7 @@
     import toast from 'svelte-french-toast'
     import { fly } from 'svelte/transition'
     import Spinner from '../../../Spinner.svelte'
+    import dayjs from 'dayjs'
 
     export let data
 
@@ -14,28 +15,23 @@
     let expiredAt = data.expiredAt
 
     let remainingTime = expiredAt - Date.now()
-    let minutes = Math.floor(remainingTime / 60000)
-    let seconds = ((remainingTime % 60000) / 1000).toFixed(0)
+    $: minutes = Math.floor(remainingTime / 60000)
+    $: seconds = ((remainingTime % 60000) / 1000).toFixed(0)
 
-    $: time = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
-        2,
-        '0'
-    )}`
+    $: countdown = dayjs().minute(minutes).second(seconds).format('mm:ss')
 
     $: resend = remainingTime <= 0 ? true : false
-    $: timer = setInterval(() => {
-        remainingTime = expiredAt - Date.now()
-        minutes = Math.floor(remainingTime / 60000)
-        seconds = ((remainingTime % 60000) / 1000).toFixed(0)
-        time = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(
-            2,
-            '0'
-        )}`
 
-        if (remainingTime <= 0) {
+    let timer
+    $: {
+        if (remainingTime > 0) {
+            timer = setInterval(() => {
+                remainingTime = expiredAt - Date.now()
+            }, 1000)
+        } else {
             clearInterval(timer)
         }
-    }, 1000)
+    }
 
     let loadingResend = false
     let loadingLogin = false
@@ -208,7 +204,7 @@
                     {/if}
                 {/if}
                 Kirim Ulang Kode
-                {#if !resend} ({time}) {/if}
+                {#if !resend} ({countdown}) {/if}
             </button>
             <button
                 disabled={loadingCancel}
