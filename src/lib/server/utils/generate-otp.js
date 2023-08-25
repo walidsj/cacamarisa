@@ -1,6 +1,10 @@
 const generateOTP = (length = 6, withAlpha = false) => {
     let charset = '123456789'
 
+    if (!withAlpha) {
+        charset += '0'
+    }
+
     if (withAlpha) {
         charset += 'ABCDEFGHIJKLMNPQRSTUVWXYZ'
     }

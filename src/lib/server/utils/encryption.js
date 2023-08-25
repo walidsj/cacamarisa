@@ -1,20 +1,21 @@
-import CryptoJS from 'crypto-js'
+import Iron from '@hapi/iron'
 import { ENCRYPT_KEY } from '$env/static/private'
 
-const aes = {
-    encrypt: (data) => {
-        return CryptoJS.AES.encrypt(
-            JSON.stringify(data),
-            ENCRYPT_KEY
-        ).toString()
+const iron = {
+    seal: async (obj) => {
+        try {
+            return await Iron.seal(obj, ENCRYPT_KEY, Iron.defaults)
+        } catch (err) {
+            throw err
+        }
     },
-    decrypt: (encrypted) => {
-        return JSON.parse(
-            CryptoJS.AES.decrypt(encrypted, ENCRYPT_KEY).toString(
-                CryptoJS.enc.Utf8
-            )
-        )
+    unseal: async (sealed) => {
+        try {
+            return await Iron.unseal(sealed, ENCRYPT_KEY, Iron.defaults)
+        } catch (err) {
+            throw err
+        }
     },
 }
 
-export { aes }
+export { iron }

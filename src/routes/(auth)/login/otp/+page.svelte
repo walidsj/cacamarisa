@@ -12,31 +12,30 @@
     let formCancel
     let formResendOtp
 
+    let loading = {
+        login: false,
+        cancel: false,
+        resendOtp: false,
+    }
+
+    let otpInput
+
     let expiredAt = data.expiredAt
 
-    let remainingTime = expiredAt - Date.now()
-    $: minutes = Math.floor(remainingTime / 60000)
-    $: seconds = ((remainingTime % 60000) / 1000).toFixed(0)
-
-    $: countdown = dayjs().minute(minutes).second(seconds).format('mm:ss')
-
-    $: resend = remainingTime <= 0 ? true : false
+    let remainingTime = expiredAt - dayjs().valueOf()
+    $: countdown = dayjs(remainingTime).format('mm:ss')
+    $: resend = remainingTime <= 0
 
     let timer
     $: {
         if (remainingTime > 0) {
             timer = setInterval(() => {
-                remainingTime = expiredAt - Date.now()
+                remainingTime = expiredAt - dayjs().valueOf()
             }, 1000)
         } else {
             clearInterval(timer)
         }
     }
-
-    let loadingResend = false
-    let loadingLogin = false
-    let loadingCancel = false
-    let otpInput
 </script>
 
 <svelte:head>
@@ -48,9 +47,9 @@
     method="POST"
     action="?/resendOtp"
     use:enhance={() => {
-        loadingResend = true
+        loading.resendOtp = true
         return async ({ result, update }) => {
-            loadingResend = false
+            loading.resendOtp = false
             switch (result.type) {
                 case 'success':
                     await update()
@@ -78,9 +77,9 @@
             method="POST"
             action="?/cancel"
             use:enhance={() => {
-                loadingCancel = true
+                loading.cancel = true
                 return async ({ result }) => {
-                    loadingCancel = false
+                    loading.cancel = false
                     switch (result.type) {
                         case 'redirect':
                             await applyAction(result)
@@ -124,12 +123,12 @@
             action="?/login"
             in:fly={{ y: 20 }}
             use:enhance={() => {
-                loadingLogin = true
+                loading.cancel = true
                 return async ({ result, update }) => {
-                    loadingLogin = false
+                    loading.cancel = false
                     switch (result.type) {
                         case 'redirect':
-                            toast.success('Login berhasil!')
+                            toast.success('Verifikasi Kode OTP berhasil.')
                             await applyAction(result)
                             break
                         case 'failure':
@@ -158,7 +157,7 @@
                 <div class="mt-1">
                     <fieldset
                         class="relative"
-                        disabled={loadingResend || loadingLogin}
+                        disabled={loading.resendOtp || loading.cancel}
                     >
                         <input
                             bind:value={otpInput}
@@ -185,7 +184,7 @@
                 class="flex gap-2 items-center text-sm text-blue-500 px-2 py-1 rounded-xl font-semibold disabled:text-gray-500"
             >
                 {#if resend}
-                    {#if loadingResend}
+                    {#if loading.resendOtp}
                         <Spinner size={5} />
                     {:else}
                         <svg
@@ -207,7 +206,7 @@
                 {#if !resend} ({countdown}) {/if}
             </button>
             <button
-                disabled={loadingCancel}
+                disabled={loading.cancel}
                 type="button"
                 on:click={() => {
                     formCancel.requestSubmit()
