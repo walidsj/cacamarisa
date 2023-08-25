@@ -87,7 +87,7 @@
             }}
             class="min-w-full flex flex-col justify-center"
         >
-            <fieldset disabled={loading} class="px-6 space-y-6">
+            <fieldset disabled={loading.register} class="px-6 space-y-6">
                 <div class="w-full flex gap-2">
                     <svg
                         class="w-20 h-20 mx-auto text-blue-500"
@@ -119,7 +119,6 @@
                     <div class="w-full mt-1">
                         <div class="relative">
                             <input
-                                disable
                                 id="nama"
                                 name="nama"
                                 placeholder="Nama Lengkap"
@@ -136,7 +135,6 @@
                     <div class="w-full mt-1">
                         <div class="relative">
                             <input
-                                disable
                                 id="nik"
                                 name="nik"
                                 placeholder="NIK"
@@ -153,7 +151,6 @@
                     <div class="w-full mt-1">
                         <div class="relative">
                             <input
-                                disable
                                 id="nip"
                                 name="nip"
                                 placeholder="NIP/NRP"
@@ -165,11 +162,11 @@
                 </div>
                 <div class="mt-20 w-full">
                     <button
-                        disabled={loading}
+                        disabled={loading.register}
                         type="submit"
                         class="flex gap-2 w-full items-center justify-center px-8 py-5 rounded-3xl active:bg-opacity-80 disabled:opacity-75 bg-blue-500 text-white"
                     >
-                        {#if loading}
+                        {#if loading.register}
                             <Spinner size={6} />
                         {/if}
                         Daftar Akun
