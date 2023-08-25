@@ -16,7 +16,6 @@
     <div class="flex items-center justify-between py-1 space-x-2.5">
         <a href="/" class="px-3 py-4 active:opacity-80">
             <svg
-                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"

@@ -15,11 +15,7 @@
                 type="button"
                 class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-10 h-10 text-white"
-                    viewBox="0 0 512 512"
-                >
+                <svg class="w-10 h-10 text-white" viewBox="0 0 512 512">
                     <path
                         d="M248 64C146.39 64 64 146.39 64 248s82.39 184 184 184 184-82.39 184-184S349.61 64 248 64z"
                         fill="none"
@@ -56,11 +52,7 @@
                 type="button"
                 class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-10 h-10 text-white"
-                    viewBox="0 0 512 512"
-                >
+                <svg class="w-10 h-10 text-white" viewBox="0 0 512 512">
                     <rect
                         fill="none"
                         stroke="currentColor"
@@ -139,11 +131,7 @@
                 type="button"
                 class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-10 h-10 text-white"
-                    viewBox="0 0 512 512"
-                >
+                <svg class="w-10 h-10 text-white" viewBox="0 0 512 512">
                     <path
                         d="M256 160c16-63.16 76.43-95.41 208-96a15.94 15.94 0 0116 16v288a16 16 0 01-16 16c-128 0-177.45 25.81-208 64-30.37-38-80-64-208-64-9.88 0-16-8.05-16-17.93V80a15.94 15.94 0 0116-16c131.57.59 192 32.84 208 96zM256 160v288"
                         fill="none"
@@ -161,11 +149,7 @@
                 type="button"
                 class="transition-all ease-in-out bg-gradient-to-br from-blue-400 to-blue-600 active:opacity-80 rounded-3xl shadow-md w-16 h-16 flex items-center justify-center"
             >
-                <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="w-10 h-10 text-white"
-                    viewBox="0 0 512 512"
-                >
+                <svg class="w-10 h-10 text-white" viewBox="0 0 512 512">
                     <path
                         d="M431 320.6c-1-3.6 1.2-8.6 3.3-12.2a33.68 33.68 0 012.1-3.1A162 162 0 00464 215c.3-92.2-77.5-167-173.7-167-83.9 0-153.9 57.1-170.3 132.9a160.7 160.7 0 00-3.7 34.2c0 92.3 74.8 169.1 171 169.1 15.3 0 35.9-4.6 47.2-7.7s22.5-7.2 25.4-8.3a26.44 26.44 0 019.3-1.7 26 26 0 0110.1 2l56.7 20.1a13.52 13.52 0 003.9 1 8 8 0 008-8 12.85 12.85 0 00-.5-2.7z"
                         fill="none"
@@ -239,7 +223,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 class="inline w-4 h-auto -mt-0.5 mr-0.5 fill-current"
                                 ><path fill="none" d="M0 0h24v24H0z" /><path
@@ -257,7 +240,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
@@ -305,7 +287,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 class="inline w-4 h-auto -mt-0.5 mr-0.5 fill-current"
                                 ><path fill="none" d="M0 0h24v24H0z" /><path
@@ -323,7 +304,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
@@ -371,7 +351,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 class="inline w-4 h-auto -mt-0.5 mr-0.5 fill-current"
                                 ><path fill="none" d="M0 0h24v24H0z" /><path
@@ -389,7 +368,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
@@ -437,7 +415,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 class="inline w-4 h-auto -mt-0.5 mr-0.5 fill-current"
                                 ><path fill="none" d="M0 0h24v24H0z" /><path
@@ -455,7 +432,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"
@@ -503,7 +479,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
                                 class="inline w-4 h-auto -mt-0.5 mr-0.5 fill-current"
                                 ><path fill="none" d="M0 0h24v24H0z" /><path
@@ -521,7 +496,6 @@
                             class="items-center w-full text-xs text-gray-400 line-clamp-1"
                         >
                             <svg
-                                xmlns="http://www.w3.org/2000/svg"
                                 fill="none"
                                 viewBox="0 0 24 24"
                                 stroke-width="1.5"

@@ -2,7 +2,6 @@
     <div class="flex items-center justify-between py-1 space-x-2.5">
         <a href="/" class="px-3 py-4 active:opacity-80">
             <svg
-                xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke-width="1.5"
@@ -46,11 +45,7 @@
                         type="button"
                         class="flex items-center justify-between w-full px-5 py-4 space-x-4 group active:bg-gray-100"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 512 512"
-                            class="w-5"
-                        >
+                        <svg viewBox="0 0 512 512" class="w-5">
                             <path
                                 d="M255.66 112c-77.94 0-157.89 45.11-220.83 135.33a16 16 0 00-.27 17.77C82.92 340.8 161.8 400 255.66 400c92.84 0 173.34-59.38 221.79-135.25a16.14 16.14 0 000-17.47C428.89 172.28 347.8 112 255.66 112z"
                                 fill="none"
@@ -74,7 +69,6 @@
                             Admin Area
                         </div>
                         <svg
-                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
@@ -96,7 +90,6 @@
                         class="flex items-center justify-between w-full px-5 py-4 space-x-4 group active:bg-gray-100"
                     >
                         <svg
-                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
@@ -116,7 +109,6 @@
                             Ubah Profil
                         </div>
                         <svg
-                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
@@ -138,7 +130,6 @@
                         class="flex items-center justify-between w-full px-5 py-4 space-x-4 group active:bg-gray-100"
                     >
                         <svg
-                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"
@@ -158,7 +149,6 @@
                             Tentang Marisa Mobile
                         </div>
                         <svg
-                            xmlns="http://www.w3.org/2000/svg"
                             fill="none"
                             viewBox="0 0 24 24"
                             stroke-width="1.5"

@@ -4,7 +4,7 @@ import { iron } from '$lib/server/utils/encryption'
 export const load = async ({ cookies }) => {
     const session = cookies.get('session')
 
-    const { noHp } = await iron.unseal(session)
+    const { noHp } = await iron.decrypt(session)
 
     return { noHp }
 }

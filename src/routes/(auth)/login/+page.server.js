@@ -23,7 +23,7 @@ export const actions = {
                 { headers: { Authorization: `Bearer ${WABOT_API_KEY}` } }
             )
 
-            const sealed = await iron.seal({
+            const sealed = await iron.encrypt({
                 noHp,
                 expiredAt: dayjs().add(2, 'minutes').valueOf(),
                 otp,

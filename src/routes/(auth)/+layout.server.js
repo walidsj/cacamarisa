@@ -11,7 +11,7 @@ export const load = async ({ cookies, url, locals }) => {
         return
     }
 
-    const { expiredAt, action } = await iron.unseal(session)
+    const { expiredAt, action } = await iron.decrypt(session)
 
     if (expiredAt > dayjs().valueOf()) {
         switch (action) {
@@ -24,7 +24,7 @@ export const load = async ({ cookies, url, locals }) => {
                     throw redirect(307, '/register')
                 break
             case 'logged_in':
-                throw redirect(307, '/app/profil')
+                throw redirect(307, '/app')
         }
     } else {
         cookies.delete('session', { path: '/' })

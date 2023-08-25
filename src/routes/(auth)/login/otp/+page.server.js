@@ -11,7 +11,7 @@ import jwt from 'jsonwebtoken'
 export const load = async ({ cookies }) => {
     const session = cookies.get('session')
 
-    const { noHp, expiredAt } = await iron.unseal(session)
+    const { noHp, expiredAt } = await iron.decrypt(session)
 
     return { noHp, expiredAt }
 }
@@ -21,7 +21,7 @@ export const actions = {
     resendOtp: async ({ cookies }) => {
         const session = cookies.get('session')
 
-        const { noHp } = await iron.unseal(session)
+        const { noHp } = await iron.decrypt(session)
 
         const otp = generateOTP(6)
         const now = dayjs().format('HH:mm')
@@ -35,7 +35,7 @@ export const actions = {
             )
 
             const expiredAt = dayjs().add(2, 'minutes').valueOf()
-            const sealed = await iron.seal({
+            const sealed = await iron.encrypt({
                 noHp,
                 expiredAt,
                 otp,
@@ -63,7 +63,7 @@ export const actions = {
                 message: 'Anda belum meminta kode OTP',
             })
 
-        const { noHp, otp, expiredAt } = await iron.unseal(session)
+        const { noHp, otp, expiredAt } = await iron.decrypt(session)
 
         const data = await request.formData()
         const otpInput = data.get('otp')
@@ -83,7 +83,7 @@ export const actions = {
 
         const user = await User.findOne({ noHp })
         if (!user) {
-            const sealed = await iron.seal({
+            const sealed = await iron.encrypt({
                 noHp,
                 expiredAt: dayjs().add(2, 'hours').valueOf(),
                 action: 'register',
